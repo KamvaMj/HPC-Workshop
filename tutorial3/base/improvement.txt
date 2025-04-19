@@ -1,0 +1,7 @@
+1. Commented out MPdir and MPlib
+2. Changed the LAdir from /usr/lib64/atlas to -I/home/software/opeblas/include
+3. Also changed LALib to -I$(LAdir) -lopenblas
+4. Inside the HPL.dat file:
+4.1 changed the HPL.out to Tutorial3.out 
+4.2 changed # of panel fact, # of recursive stopping criterium,# of recursive panel fact to 1
+ 
