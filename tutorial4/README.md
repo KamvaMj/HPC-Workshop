@@ -183,12 +183,52 @@ You will encounter most of the expected tasks while you work through the tutoria
 By completing the first successful run and visualisation of the Quantum Volume micro-benchmark, the python code in `qv_experiment.py` script is as follows:<br>
 ```python
 # Paste you code here for marks
+from qiskit import *
+from qiskit.circuit.library import *
+from qiskit_aer import *
+import time
+import numpy as np
+import matplotlib.pyplot as plt
+
+def quant_vol(qubits,shots,depth):
+   sim = AerSimulator(method='statevector', device='CPU')
+   circuit = QuantumVolume(qubits, depth, seed=0)
+   circuit.measure_all()
+   circuit = transpile(circuit, sim)
+
+   start = time.time()
+   result = sim.run(circuit, shots=shots, seed_simulator=12345).result()
+   time_val = time.time() - start
+   return time_val
+
+
+num_qubits = np.arange(2, 20)
+qv_depth = 15
+num_shots = 10
+
+# Array for storing the output results
+results_array = []
+
+# iterate over qv depth and number of qubits
+for i in num_qubits:
+   results_array.append( quant_vol(qubits=i, shots=num_shots, depth=qv_depth))
+   # for debugging purposes you can print out the results
+   print(f"Qubits: {i}	 Time: {results_array[-1]}")
+
+plt.xlabel('Number of qubits')
+plt.ylabel('Time (sec)')
+plt.plot(num_qubits, results_array)
+plt.title('Quantum Volume Experiment with depth=' + str(qv_depth))
+plt.savefig('qv_experiment.png')
+
 ```
 
 When the above code is run and visualised in JupyterLab, the image below is generated,<br>
  
 > Add image for of initial qv_experiment.py result. When
-> `num_qubits=(2,10)`, `qv_depth=5`, `num_shots=10`
+> `num_qubits=(2,10)`
+
+> , `qv_depth=5`, `num_shots=10`
 > This will also count as proof that you have successfully launched JupyterLab.
 
 We will now consider what affect each parameter has on the outcome.
