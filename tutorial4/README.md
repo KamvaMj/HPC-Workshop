@@ -227,15 +227,11 @@ When the above code is run and visualised in JupyterLab, the image below is gene
 > Add image for of initial qv_experiment.py result. When
 > `num_qubits=(2,10)`
 >![Screenshot (60)](https://github.com/user-attachments/assets/cb1b13cd-eba4-461f-87bf-2ffd3ddd766b)
-
->
 > `qv_depth=5`
 >![Screenshot (61)](https://github.com/user-attachments/assets/a495b918-6724-4134-a59b-ae6b05f46faf)
-
 >
 > `num_shots=10`
 >![Screenshot (62)](https://github.com/user-attachments/assets/bb377e26-5bbf-4386-a374-e0b6ef2ccf32)
-
 >
 > This will also count as proof that you have successfully launched JupyterLab.
 
