@@ -227,8 +227,14 @@ When the above code is run and visualised in JupyterLab, the image below is gene
  
 > Add image for of initial qv_experiment.py result. When
 > `num_qubits=(2,10)`
+![Screenshot (60)](https://github.com/user-attachments/assets/b44fc5f1-0e90-464c-b692-b53940b0d69a)
 
-> , `qv_depth=5`, `num_shots=10`
+> , `qv_depth=5`
+![Screenshot (61)](https://github.com/user-attachments/assets/09b340f6-4a02-4460-a55b-62039acdaa38)
+
+> , `num_shots=10`
+![Screenshot (62)](https://github.com/user-attachments/assets/2706c78c-0a17-4f9a-98d2-b380e4920662)
+
 > This will also count as proof that you have successfully launched JupyterLab.
 
 We will now consider what affect each parameter has on the outcome.
